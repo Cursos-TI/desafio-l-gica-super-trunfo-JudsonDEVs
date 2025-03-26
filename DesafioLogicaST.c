@@ -69,6 +69,8 @@ int main(){
      
     dpop2 = (float)(populacao2 / area2); // calculo para resultado da densidade populacional.
     ppc2 = (float)(pib2 / populacao2); // calculo para resultado do pib per capita.
+
+    /// Imprimindo os dados da segunda carta na tela ///
      
     printf ("DADOS DA CARTA 2\n");
      
@@ -83,18 +85,110 @@ int main(){
     printf ("Quantidade de Pontos Turísticos: %d\n\n", pontos2);
 
 
-    printf ("-/-/-/-/-/ BATALHA DAS CARTAS /-/-/-/-/-\n\n");
+    int escolha; // Adicionei mais uma variável para utilização do switch
 
-    if (ppc1 > ppc2){
-        printf ("Carta 1 - %s - PIB Per Capita: R$ %.2f\n", nome1, ppc1);
-        printf ("Carta 2 - %s - PIB Per Capita: R$ %.2f\n", nome2, ppc2);
-        printf ("Carta 1 Venceu!!!\n");
-    } else{
-        printf ("Carta 1 - %s: PIB Per Capita: R$ %.2f\n", nome1, ppc1);
-        printf ("Carta 2 - %s: PIB Per Capita: R$ %.2f\n", nome2, ppc2);
-        printf ("Carta 2 Venceu!!!\n");
+    printf ("-/-/-/-/-/ BATALHA DAS CARTAS /-/-/-/-/-\n\n");  /// menu interativo
+
+    printf ("Escolha um mode de batalha: \n");
+    printf ("1. Batalha de População\n");
+    printf ("2. Batalha de Área\n");
+    printf ("3. Batalha de PIB\n");
+    printf ("4. Batalha de Pontos Turísticos\n");
+    printf ("5. Batalha de Densidade Demografica\n");
+    printf ("Você Escolheu: ");
+    scanf ("%d", &escolha);
+
+    switch (escolha)
+    {
+    case 1:
+        if (populacao1 == populacao2)
+        {
+            printf ("***EMPATE!!!***\n");
+        } else if (populacao1 > populacao2)
+        {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: População \n");
+            printf ("Carta 1: %lu  vs  Carta 2: %lu\n", populacao1, populacao2);
+            printf ("Carta 1 Foi a Vencedora!!!\n");
+        } else {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: População \n");
+            printf ("Carta 1: %lu  //  Carta 2: %lu\n", populacao1, populacao2);
+            printf ("Carta 2 Foi a Vencedora!!!\n");
+        }
+        break;
+    case 2:
+        if (area1 == area2)
+        {
+            printf ("***EMPATE!!!***\n");
+        } else if (area1 > area2)
+        {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Área \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", area1, area2);
+            printf ("Carta 1 Foi a Vencedora!!!\n");
+        } else {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Área \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", area1, area2);
+            printf ("Carta 2 Foi a Vencedora!!!\n");
+        }
+        break;
+    case 3:
+        if (pib1 == pib2)
+        {
+            printf ("***EMPATE!!!***\n");
+        } else if (pib1 > pib2)
+        {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: PIB \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", pib1, pib2);
+            printf ("Carta 1 Foi a Vencedora!!!\n");
+        } else {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: PIB \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", pib1, pib2);
+            printf ("Carta 2 Foi a Vencedora!!!\n");
+        }
+        break;
+    case 4:
+        if (pontos1 == pontos2)
+        {
+            printf ("***EMPATE!!!***\n");
+        } else if (pontos1 > pontos2)
+        {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Número de Pontos Turísticos \n");
+            printf ("Carta 1: %d  vs  Carta 2: %d\n", pontos1, pontos2);
+            printf ("Carta 1 Foi a Vencedora!!!\n");
+        } else {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Número de Pontos Turísticos \n");
+            printf ("Carta 1: %d  vs  Carta 2: %d\n", pontos1, pontos2);
+            printf ("Carta 2 Foi a Vencedora!!!\n");
+        }
+        break;
+    case 5:
+        if (dpop1 == dpop2)
+        {
+            printf ("***EMPATE!!!***\n");
+        } else if (dpop1 < dpop2)
+        {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Densidade Demográfica \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", dpop1, dpop2);
+            printf ("Carta 1 Foi a Vencedora!!!\n");
+        } else {
+            printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
+            printf ("Atributo de Batalha: Densidade Demográfica \n");
+            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", dpop1, dpop2);
+            printf ("Carta 2 Foi a Vencedora!!!\n");
+        }
+        break;
+    default:
+            printf ("Escolha uma Opção Válida\n");
+        break;
     }
-    
 
     return 0;
 
