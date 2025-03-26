@@ -142,12 +142,12 @@ int main(){
         {
             printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
             printf ("Atributo de Batalha: PIB \n");
-            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", pib1, pib2);
+            printf ("Carta 1: R$ %.2f  vs  Carta 2: R$ %.2f\n", pib1, pib2);
             printf ("Carta 1 Foi a Vencedora!!!\n");
         } else {
             printf ("Carta 1 ** %s ** VS Carta 2 ** %s ** \n", nome1, nome2);
             printf ("Atributo de Batalha: PIB \n");
-            printf ("Carta 1: %.2f  vs  Carta 2: %.2f\n", pib1, pib2);
+            printf ("Carta 1: R$ %.2f  vs  Carta 2: R$ %.2f\n", pib1, pib2);
             printf ("Carta 2 Foi a Vencedora!!!\n");
         }
         break;
